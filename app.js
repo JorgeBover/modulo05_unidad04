@@ -10,7 +10,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
-var novedadesRouter = require('./routes/admin/novedades');
+var serviciosRouter = require('./routes/admin/servicios');
 
 var app = express();
 
@@ -47,7 +47,7 @@ secured = async (req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/novedades', secured, novedadesRouter);
+app.use('/admin/servicios', secured, serviciosRouter);
 
 
 // catch 404 and forward to error handler
